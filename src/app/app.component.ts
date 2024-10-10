@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { MaterialAngularModules } from './MaterialAngularModules';
 import { Modules } from './ImportModules';
@@ -25,5 +25,10 @@ export class AppComponent {
   logout() {
     UserStorageService.signOut();
     this.router.navigateByUrl('login');
+  }
+
+  @HostListener('window:beforeunload', ['$event'])
+  clearLocalStorage(event: Event) {
+    localStorage.clear(); // hoặc sessionStorage.clear();
   }
 }
