@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserStorageService } from '../../../services/storage/user-storage.service';
 
-const URL = "http://localhost:8080/"
+const URL = "http://localhost:8080/api/admin/"
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class AdminService {
   constructor(private httpClient: HttpClient) { }
 
   createCategory(categoryDto: any): Observable<any> {
-    return this.httpClient.post(URL + "api/admin/category", categoryDto, {
+    return this.httpClient.post(URL + "category", categoryDto, {
       headers: this.createAuthorizationHeader()
     })
   }
