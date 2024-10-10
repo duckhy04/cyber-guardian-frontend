@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { UserStorageService } from '../../services/storage/user-storage.service';
 
 @Component({
   selector: 'app-signup',
@@ -26,6 +27,9 @@ export class SignupComponent {
   ) { }
 
   ngOnInit(): void {
+
+    UserStorageService.signOut();
+
     this.signupForm = this.formBuiler.group({
       name: [null, [Validators.required]],
       email: [null, [Validators.required, Validators.email]],

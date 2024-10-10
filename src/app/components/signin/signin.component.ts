@@ -22,9 +22,12 @@ export class SigninComponent {
     private formBuilder: FormBuilder,
     private authService: AuthService,
     private snackBar: MatSnackBar,
-    private router: Router
+    private router: Router,
   ) { }
   ngOnInit(): void {
+
+    UserStorageService.signOut();
+
     this.loginForm = this.formBuilder.group({
       email: [null, [Validators.required]],
       password: [null, [Validators.required]],
