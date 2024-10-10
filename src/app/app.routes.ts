@@ -13,7 +13,7 @@ export const routes: Routes = [
             {
                 path: 'dashboard',
                 loadComponent: () => import('./components/user/components/dashboard/dashboard.component').then((m) => m.DashboardComponent)
-            }
+            },
         ]
     },
     {
@@ -23,7 +23,11 @@ export const routes: Routes = [
             {
                 path: 'dashboard',
                 loadComponent: () => import('./components/admin/components/dashboard/dashboard.component').then((m) => m.DashboardComponent)
-            }
+            },
+            {
+                path: 'category',
+                loadComponent: () => import('./components/admin/components/category/category.component').then((m) => m.CategoryComponent)
+            },
         ]
     }
 ];
