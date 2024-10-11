@@ -27,8 +27,8 @@ export class AppComponent {
     this.router.navigateByUrl('login');
   }
 
-  @HostListener('window:beforeunload', ['$event'])
-  clearLocalStorage(event: Event) {
-    localStorage.clear(); // hoặc sessionStorage.clear();
-  }
+  // @HostListener('window:beforeunload', ['$event'])
+  // clearLocalStorage(event: Event) {
+  //   localStorage.clear(); // hoặc sessionStorage.clear();
+  // }
 }

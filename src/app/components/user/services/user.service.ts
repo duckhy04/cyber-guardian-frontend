@@ -24,6 +24,12 @@ export class UserService {
     })
   }
 
+  getAllQuestions(): Observable<any> {
+    return this.httpClient.get(URL + "questions", {
+      headers: this.createAuthorizationHeader()
+    })
+  }
+
   private createAuthorizationHeader(): HttpHeaders {
     return new HttpHeaders().set(
       'Authorization', 'Bearer ' + UserStorageService.getToken()

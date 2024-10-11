@@ -1,1 +1,18 @@
 <p>dashboard works!</p>
+<mat-card class="question-card" *ngFor="let question of questions">
+    <div class="question-details">
+        <h2 class="question-name">{{ question.title }}</h2>
+        <p class="question-content">{{ question.content }}</p>
+        <mat-divider></mat-divider>
+        <div class="question-info">
+            <div class="info-row">
+                <span class="info-label">User name:</span>
+                <span class="info-value">{{ question.userName }}</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Category:</span>
+                <span class="info-value">{{ question.categoryName }}</span>
+            </div>
+        </div>
+    </div>
+</mat-card>
