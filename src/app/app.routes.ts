@@ -14,6 +14,10 @@ export const routes: Routes = [
                 path: 'dashboard',
                 loadComponent: () => import('./components/user/components/dashboard/dashboard.component').then((m) => m.DashboardComponent)
             },
+            {
+                path: 'post-question',
+                loadComponent: () => import('./components/user/components/post-question/post-question.component').then((m) => m.PostQuestionComponent)
+            },
         ]
     },
     {
