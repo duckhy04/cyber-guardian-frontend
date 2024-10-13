@@ -31,6 +31,7 @@ export class CategoryComponent {
       description: [null, [Validators.required]]
     });
     this.getAllCategories();
+
   }
 
   createCategory() {
