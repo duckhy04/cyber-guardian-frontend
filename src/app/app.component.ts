@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { MaterialAngularModules } from './MaterialAngularModules';
 import { Modules } from './ImportModules';
-import { UserStorageService } from './services/storage/user-storage.service';
+import { UserStorageService } from './core/storage/user-storage.service';
 
 @Component({
   selector: 'app-root',

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { Modules } from '../../ImportModules';
-import { MaterialAngularModules } from '../../MaterialAngularModules';
+import { Modules } from '../../../ImportModules';
+import { MaterialAngularModules } from '../../../MaterialAngularModules';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from '../../services/auth/auth.service';
+import { AuthService } from '../../../core/auth/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { UserStorageService } from '../../services/storage/user-storage.service';
+import { UserStorageService } from '../../../core/storage/user-storage.service';
 
 @Component({
   selector: 'app-signup',
