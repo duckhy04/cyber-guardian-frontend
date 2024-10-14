@@ -15,7 +15,7 @@ import { UserStorageService } from '../../../core/storage/user-storage.service';
 })
 export class SigninComponent {
 
-  loginForm!: FormGroup;
+  signInForm!: FormGroup;
   hidePassword = true;
 
   constructor(
@@ -28,10 +28,10 @@ export class SigninComponent {
 
     UserStorageService.signOut();
 
-    this.loginForm = this.formBuilder.group({
-      email: [null, [Validators.required]],
-      password: [null, [Validators.required]],
-    })
+    this.signInForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(3)]],
+    });
   }
 
   togglePasswordVisibility() {
@@ -39,8 +39,8 @@ export class SigninComponent {
   }
 
   onSubmit(): void {
-    const username = this.loginForm.get('email')!.value;
-    const password = this.loginForm.get('password')!.value;
+    const username = this.signInForm.get('email')!.value;
+    const password = this.signInForm.get('password')!.value;
 
     this.authService.login(username, password).subscribe({
       next: (response) => {
