@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, of } from 'rxjs';
 import { UserStorageService } from '../storage/user-storage.service';
+import { SignInRequest } from '../models/sign-in/sign-in-request';
+import { SignUpRequest } from '../models/sign-up/sign-up-request';
 
 const BASIC_URL = "http://localhost:8080/"
 
@@ -11,15 +13,16 @@ const BASIC_URL = "http://localhost:8080/"
 export class AuthService {
   constructor(private http: HttpClient, private userStorageService: UserStorageService) { }
 
-  register(sigunupRequest: any): Observable<any> {
-    return this.http.post(BASIC_URL + "sign-up", sigunupRequest);
+  // Hàm đăng ký (register)
+  register(signupRequest: SignUpRequest): Observable<any> {
+    return this.http.post(BASIC_URL + 'sign-up', signupRequest);
   }
 
-  login(username: string, password: string): Observable<boolean> {
+  // Hàm đăng nhập (login)
+  login(loginRequest: SignInRequest): Observable<boolean> {
     const headers = new HttpHeaders().set('Content-Type', 'application/json');
-    const body = { username, password };
 
-    return this.http.post(BASIC_URL + 'authenticate', body, { headers, observe: 'response' }).pipe(
+    return this.http.post(BASIC_URL + 'authenticate', loginRequest, { headers, observe: 'response' }).pipe(
       map((res: any) => {
         // Lấy token từ headers
         const authorizationHeader = res.headers.get('authorization');
@@ -42,5 +45,4 @@ export class AuthService {
       })
     );
   }
-
 }

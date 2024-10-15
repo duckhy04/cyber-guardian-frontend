@@ -39,10 +39,11 @@ export class SigninComponent {
   }
 
   onSubmit(): void {
-    const username = this.signInForm.get('email')!.value;
+    const email = this.signInForm.get('email')!.value;
     const password = this.signInForm.get('password')!.value;
 
-    this.authService.login(username, password).subscribe({
+
+    this.authService.login({email, password}).subscribe({
       next: (response) => {
         // Kiểm tra xem phản hồi có chứa token hoặc dữ liệu người dùng hay không
         if (UserStorageService.getToken() && UserStorageService.getUser()) {
