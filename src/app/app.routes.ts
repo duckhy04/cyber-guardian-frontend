@@ -27,22 +27,18 @@ export const routes: Routes = [
     // },
 
     // // Routes dành cho admin
-    // {
-    //     path: 'admin',
-    //     loadComponent: () => import('./components/admin/admin.component').then((m) => m.AdminComponent),
-    //     canActivate: [roleGuard],
-    //     data: { expectedRole: 'ADMIN' }, // Áp dụng role guard, chỉ user có vai trò ADMIN được truy cập
-    //     children: [
-    //         {
-    //             path: 'dashboard',
-    //             loadComponent: () => import('./components/admin/components/dashboard/dashboard.component').then((m) => m.DashboardComponent)
-    //         },
-    //         {
-    //             path: 'category',
-    //             loadComponent: () => import('./components/admin/components/category/category.component').then((m) => m.CategoryComponent)
-    //         },
-    //     ]
-    // },
+    {
+        path: 'admin',
+        loadComponent: () => import('./features/admin/admin.component').then((m) => m.AdminComponent),
+        canActivate: [roleGuard],
+        data: { expectedRole: 'ADMIN' }, // Áp dụng role guard, chỉ user có vai trò ADMIN được truy cập
+        children: [
+            {
+                path: 'category',
+                loadComponent: () => import('./features/admin/components/add-category/add-category.component').then((m) => m.AddCategoryComponent)
+            },
+        ]
+    },
 
     // Route not-authorized (có thể thêm vào nếu cần)
     {

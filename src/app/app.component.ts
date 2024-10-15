@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
-import { MaterialAngularModules } from './MaterialAngularModules';
-import { Modules } from './ImportModules';
+import { MaterialAngularModules } from './shared/modules/MaterialAngularModules';
+import { Modules } from './shared/modules/ImportModules';
 import { UserStorageService } from './core/storage/user-storage.service';
 
 @Component({

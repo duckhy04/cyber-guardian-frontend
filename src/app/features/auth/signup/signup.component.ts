@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Modules } from '../../../ImportModules';
-import { MaterialAngularModules } from '../../../MaterialAngularModules';
+import { Modules } from '../../../shared/modules/ImportModules';
+import { MaterialAngularModules } from '../../../shared/modules/MaterialAngularModules';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../core/auth/auth.service';

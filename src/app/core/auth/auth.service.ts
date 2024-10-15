@@ -2,8 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, Observable, of } from 'rxjs';
 import { UserStorageService } from '../storage/user-storage.service';
-import { SignInRequest } from '../models/sign-in/sign-in-request';
-import { SignUpRequest } from '../models/sign-up/sign-up-request';
+import { SignInRequest } from '../models/sign-in-request';
+import { SignUpRequest } from '../models/sign-up-request';
 
 const BASIC_URL = "http://localhost:8080/"
 

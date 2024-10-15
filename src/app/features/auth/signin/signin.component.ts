@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Modules } from '../../../ImportModules';
-import { MaterialAngularModules } from '../../../MaterialAngularModules';
+import { Modules } from '../../../shared/modules/ImportModules';
+import { MaterialAngularModules } from '../../../shared/modules/MaterialAngularModules';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../core/auth/auth.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -43,7 +43,7 @@ export class SigninComponent {
     const password = this.signInForm.get('password')!.value;
 
 
-    this.authService.login({email, password}).subscribe({
+    this.authService.login({ email, password }).subscribe({
       next: (response) => {
         // Kiểm tra xem phản hồi có chứa token hoặc dữ liệu người dùng hay không
         if (UserStorageService.getToken() && UserStorageService.getUser()) {
@@ -51,7 +51,7 @@ export class SigninComponent {
 
           // Chuyển hướng dựa trên vai trò của người dùng
           if (UserStorageService.isAdminLoggedIn()) {
-            this.router.navigate(['admin/dashboard']);
+            this.router.navigate(['admin/category']);
           } else if (UserStorageService.isUserLoggedIn()) {
             this.router.navigate(['user/dashboard']);
           }
