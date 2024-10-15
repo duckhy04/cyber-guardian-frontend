@@ -1,0 +1,17 @@
+<!-- Hiển thị SpinnerComponent trong khi đang loading -->
+<app-spinner *ngIf="loading"></app-spinner>
+
+<div *ngIf="!loading">
+    <div *ngIf="!isAdminLoggedIn && !isUserLoggedIn">
+        <div class="bg-blue-600 p-4 flex justify-between items-center">
+            <span class="text-white text-lg font-bold">Cyber Guardian</span>
+            <div class="flex space-x-4">
+                <a routerLink="signup" routerLinkActive="active"
+                    class="text-white hover:bg-blue-700 rounded px-4 py-2">Sign Up</a>
+                <a routerLink="signin" routerLinkActive="active"
+                    class="text-white hover:bg-blue-700 rounded px-4 py-2">Sign In</a>
+            </div>
+        </div>
+    <!-- </div> -->
+</div>
+<router-outlet></router-outlet>

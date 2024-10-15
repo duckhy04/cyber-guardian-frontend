@@ -1,1 +1,27 @@
-<p>user works!</p>
+<div class="bg-gray-100">
+    <div class="shadow-md p-2 bg-white max-w-full mx-auto border-gray-300 border border-solid ">
+        <div class="flex items-center justify-between">
+            <!-- Logo and name webiste -->
+            <div class="flex items-center space-x-3 min-w-fit">
+                <div class="h-12 w-12"><img class="object-contain" src="/src/assets/logo1.png"
+                        alt="Cyber Guardian Logo"></div>
+                <div class="text-xl font-semibold uppercase">Cyber Guardian</div>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="w-6/12 mx-3 hidden md:block">
+                <input type="text" placeholder="Search sonmethings..."
+                    class="w-full border border-gray-200 p-2 rounded-lg focus:outline-none focus:ring focus:border-blue-200">
+            </div>
+
+            <!-- Profile -->
+            <div class="flex items-center justify-center mx-2 min-w-fit">
+                <!-- Avatar-->
+                <div class="w-10 h-10"><img src="/src/assets/avatar-profile.png" alt="avatar"></div>
+                <!-- Name -->
+                <div class="text-lg font-semibold text-gray-700 mx-2">Hello World</div>
+            </div>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

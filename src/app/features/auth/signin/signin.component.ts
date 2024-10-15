@@ -51,7 +51,7 @@ export class SigninComponent {
 
           // Chuyển hướng dựa trên vai trò của người dùng
           if (UserStorageService.isAdminLoggedIn()) {
-            this.router.navigate(['admin/category']);
+            this.router.navigate(['admin/dashboard']);
           } else if (UserStorageService.isUserLoggedIn()) {
             this.router.navigate(['user/dashboard']);
           }
