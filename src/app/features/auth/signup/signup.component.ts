@@ -16,7 +16,7 @@ import { UserStorageService } from '../../../core/storage/user-storage.service';
 })
 export class SignupComponent {
 
-  signupForm!: FormGroup;
+  signUpForm!: FormGroup;
   hidePassword = true;
 
   constructor(
@@ -30,7 +30,7 @@ export class SignupComponent {
 
     UserStorageService.signOut();
 
-    this.signupForm = this.formBuiler.group({
+    this.signUpForm = this.formBuiler.group({
       name: [null, [Validators.required]],
       email: [null, [Validators.required, Validators.email]],
       password: [null, [Validators.required]],
@@ -43,13 +43,13 @@ export class SignupComponent {
   }
 
   onSubmit(): void {
-    const password = this.signupForm.get('password')?.value;
-    const confirmPassword = this.signupForm.get('confirmPassword')?.value;
+    const password = this.signUpForm.get('password')?.value;
+    const confirmPassword = this.signUpForm.get('confirmPassword')?.value;
     if (password !== confirmPassword) {
       this.snackBar.open('Passwords do not match.', 'close', { duration: 5000, panelClass: 'error-snackbar' });
       return;
     }
-    this.authService.register(this.signupForm.value).subscribe({
+    this.authService.register(this.signUpForm.value).subscribe({
       next: (response) => {
         this.snackBar.open('Sign up successfull', 'Close', { duration: 5000 });
         this.router.navigateByUrl("/login");
