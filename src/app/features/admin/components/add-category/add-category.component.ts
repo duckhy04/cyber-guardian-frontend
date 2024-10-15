@@ -23,7 +23,6 @@ export class AddCategoryComponent {
 
   onSubmit() {
     if (this.addCategoryForm.valid) {
-      
       this.adminService.addCategory(this.addCategoryForm.value).subscribe({
         next: (response) => {
           console.log("Success")

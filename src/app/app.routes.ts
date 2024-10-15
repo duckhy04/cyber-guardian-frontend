@@ -26,7 +26,7 @@ export const routes: Routes = [
     //     ]
     // },
 
-    // // Routes dành cho admin
+    // Routes dành cho admin
     {
         path: 'admin',
         loadComponent: () => import('./features/admin/admin.component').then((m) => m.AdminComponent),
@@ -40,7 +40,7 @@ export const routes: Routes = [
         ]
     },
 
-    // Route not-authorized (có thể thêm vào nếu cần)
+    // Route not-authorized 
     {
         path: 'not-authorized',
         loadComponent: () => import('./features/auth/not-authorized/not-authorized.component').then((m) => m.NotAuthorizedComponent)
