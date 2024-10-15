@@ -12,22 +12,4 @@ import { SpinnerComponent } from "../../shared/components/spinner/spinner.compon
   styleUrl: './auth.component.scss'
 })
 export class AuthComponent {
-  isUserLoggedIn: boolean = true;
-  isAdminLoggedIn: boolean = true;
-  loading: boolean = true;
-
-  constructor(private router: Router) { }
-
-  ngOnInit(): void {
-    // Kiểm tra trạng thái đăng nhập khi khởi động
-        this.checkLoginStatus();
-  }
-
-  checkLoginStatus() {
-    setTimeout(() => {
-      this.isUserLoggedIn = UserStorageService.isUserLoggedIn();
-      this.isAdminLoggedIn = UserStorageService.isAdminLoggedIn();
-      this.loading = false; // Đặt loading thành false sau khi kiểm tra
-    }, 1000); // Thời gian chờ
-  }
 }
