@@ -1,1 +1,7 @@
-<router-outlet></router-outlet>
+<!-- Hiển thị SpinnerComponent khi điều hướng -->
+<app-spinner *ngIf="loading"></app-spinner>
+
+<!-- Nội dung chính -->
+<div *ngIf="!loading">
+    <router-outlet></router-outlet>
+</div>
