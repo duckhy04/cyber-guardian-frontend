@@ -1,9 +1,8 @@
 import { Routes } from '@angular/router';
-import { SigninComponent } from './features/auth/signin/signin.component';
 import { roleGuard } from './core/guard/role.guard';
 
 export const routes: Routes = [
-    { path: '', component: SigninComponent, pathMatch: 'full' },
+    { path: '', redirectTo: '/auth', pathMatch: 'full' },
 
     // Routes dành cho auth
     {
@@ -64,5 +63,5 @@ export const routes: Routes = [
     },
 
     // Redirect các route không hợp lệ
-    { path: '**', redirectTo: 'signin' }
+    { path: '**', redirectTo: 'auth' }
 ];
