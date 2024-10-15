@@ -12,4 +12,7 @@ import { SpinnerComponent } from "../../shared/components/spinner/spinner.compon
   styleUrl: './auth.component.scss'
 })
 export class AuthComponent {
+  ngOnInit() {
+    UserStorageService.signOut();
+  }
 }
