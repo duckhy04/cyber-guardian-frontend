@@ -1,11 +1,11 @@
 <!-- Toolbar -->
-<div class="bg-gray-100 fixed top-0 left-0 right-0 z-10">
-    <div class="shadow-md p-2 bg-white max-w-full mx-auto border-gray-300 border border-solid ">
+<div class="bg-gray-100">
+    <div class="p-2 bg-white max-w-full mx-auto border-gray-300 border border-solid ">
         <div class="flex items-center justify-between">
             <!-- Logo and name website -->
             <div class="flex items-center space-x-3 min-w-fit">
                 <div class="h-12 w-12">
-                    <img class="object-contain" src="/src/assets/logo1.png" alt="Cyber Guardian Logo">
+                    <img class="object-contain" src="assets/logo1.png" alt="Cyber Guardian Logo">
                 </div>
                 <div class="text-xl font-semibold uppercase">Cyber Guardian</div>
             </div>
@@ -19,7 +19,7 @@
             <!-- Profile -->
             <div class="flex items-center justify-center mx-2 min-w-fit">
                 <!-- Avatar-->
-                <div class="w-10 h-10"><img src="/src/assets/avatar-profile.png" alt="avatar"></div>
+                <div class="w-10 h-10"><img src="assets/avatar-profile.png" alt="avatar"></div>
                 <!-- Name -->
                 <div class="text-lg font-semibold text-gray-700 mx-2">Hello World</div>
             </div>
@@ -28,25 +28,37 @@
 </div>
 
 <!-- Main -->
-<div class="grid grid-cols-5 gap-4 h-screen mt-16"> <!-- Thêm mt-16 để tạo khoảng trống cho toolbar -->
+<div class="grid grid-cols-5 gap-4 h-screen">
+
     <!-- Left Sidebar -->
-    <div class="border border-black col-span-1 bg-gray-200 p-4 h-full overflow-hidden">
-        <nav class="flex flex-col space-y-4">
-            <a href="#" class="text-black font-semibold" routerLink="dashboard">Dashboard</a>
-            <a href="#" class="text-black font-semibold" routerLink="categories">Categories</a>
-            <a href="#" class="text-black font-semibold" routerLink="questions">Questions</a>
-            <a href="#" class="text-black font-semibold" routerLink="">Top Questions</a>
-            <a href="#" class="text-black font-semibold" routerLink="">Related Links</a>
+    <div class="col-span-1 border-r-2 bg-white p-4 h-full overflow-hidden">
+        <nav class="flex flex-col space-y-1 float-end">
+            <a class="nav-link" routerLink="dashboard">
+                <div class="md:block hidden mx-2">Dashboard</div>
+                <app-icon iconName="home"></app-icon>
+            </a>
+            <a class="nav-link" routerLink="categories">
+                <div class="md:block hidden mx-2">Categories</div>
+                <app-icon iconName="apps"></app-icon>
+            </a>
+            <a class="nav-link" routerLink="">
+                <div class="md:block hidden mx-2">Top Questions</div>
+                <app-icon iconName="question_answer"></app-icon>
+            </a>
+            <a class="nav-link" routerLink="">
+                <div class="md:block hidden mx-2">RelatedLinks</div>
+                <app-icon iconName=""></app-icon>
+            </a>
         </nav>
     </div>
 
     <!-- Main content-->
-    <div class="border border-black col-span-3 bg-white p-4 h-full overflow-y-auto">
+    <div class="col-span-3 bg-white p-4 h-full overflow-y-auto">
         <router-outlet></router-outlet>
     </div>
 
     <!-- Right Sidebar -->
-    <div class="border border-black col-span-1 bg-gray-200 p-4 h-full overflow-hidden">
+    <div class="col-span-1 bg-gray-200 p-4 h-full overflow-hidden">
         <!-- Nội dung bên phải -->
     </div>
 </div>
