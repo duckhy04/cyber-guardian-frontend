@@ -24,12 +24,16 @@ export const routes: Routes = [
     {
         path: 'user',
         loadComponent: () => import('./features/user/user.component').then((m) => m.UserComponent),
-        canActivate: [roleGuard],
+        // canActivate: [roleGuard],
         data: { expectedRole: 'USER' }, // Áp dụng role guard, chỉ user có vai trò USER được truy cập
         children: [
             {
                 path: 'dashboard',
                 loadComponent: () => import('./features/user/components/dashboard/dashboard.component').then((m) => m.DashboardComponent)
+            },
+            {
+                path: 'categories',
+                loadComponent: () => import('./features/user/components/categories/categories.component').then((m) => m.CategoriesComponent)
             },
         ]
     },
@@ -63,5 +67,5 @@ export const routes: Routes = [
     },
 
     // Redirect các route không hợp lệ
-    { path: '**', redirectTo: 'auth' }
+    // { path: '**', redirectTo: 'auth' }
 ];

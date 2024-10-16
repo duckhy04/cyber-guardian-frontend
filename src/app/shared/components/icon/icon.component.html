@@ -1,0 +1,7 @@
+<ng-container [ngSwitch]="iconName">
+    <i *ngSwitchCase="'dashboard'" class="fa-solid fa-house h-2 w-2"></i>
+    <i *ngSwitchCase="'categories'" class="fas fa-th-list"></i>
+    <i *ngSwitchCase="'questions'" class="fas fa-question-circle"></i>
+    <i *ngSwitchCase="'top-questions'" class="fas fa-star"></i>
+    <i *ngSwitchCase="'related-links'" class="fas fa-link"></i>
+</ng-container>
