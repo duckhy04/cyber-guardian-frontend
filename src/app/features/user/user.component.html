@@ -1,17 +1,18 @@
 <!-- Toolbar -->
-<div class="bg-gray-100">
+<div class="bg-gray-100 fixed top-0 left-0 right-0 z-10">
     <div class="shadow-md p-2 bg-white max-w-full mx-auto border-gray-300 border border-solid ">
         <div class="flex items-center justify-between">
-            <!-- Logo and name webiste -->
+            <!-- Logo and name website -->
             <div class="flex items-center space-x-3 min-w-fit">
-                <div class="h-12 w-12"><img class="object-contain" src="/src/assets/logo1.png"
-                        alt="Cyber Guardian Logo"></div>
+                <div class="h-12 w-12">
+                    <img class="object-contain" src="/src/assets/logo1.png" alt="Cyber Guardian Logo">
+                </div>
                 <div class="text-xl font-semibold uppercase">Cyber Guardian</div>
             </div>
 
             <!-- Search Bar -->
             <div class="w-5/12 mx-3 hidden md:block">
-                <input type="text" placeholder="Search sonmethings..."
+                <input type="text" placeholder="Search something..."
                     class="w-full border border-gray-200 p-2 rounded-lg focus:outline-none focus:ring focus:border-blue-200">
             </div>
 
@@ -27,9 +28,9 @@
 </div>
 
 <!-- Main -->
-<div class="grid grid-cols-5 gap-4 h-screen">
+<div class="grid grid-cols-5 gap-4 h-screen mt-16"> <!-- Thêm mt-16 để tạo khoảng trống cho toolbar -->
     <!-- Left Sidebar -->
-    <div class="border border-black col-span-1 bg-gray-200 p-4 h-full">
+    <div class="border border-black col-span-1 bg-gray-200 p-4 h-full overflow-hidden">
         <nav class="flex flex-col space-y-4">
             <a href="#" class="text-black font-semibold" routerLink="dashboard">Dashboard</a>
             <a href="#" class="text-black font-semibold" routerLink="categories">Categories</a>
@@ -44,8 +45,8 @@
         <router-outlet></router-outlet>
     </div>
 
-    <!-- Right Siderbar -->
-    <div class="border border-black col-span-1 bg-gray-200 p-4 h-full">
-
+    <!-- Right Sidebar -->
+    <div class="border border-black col-span-1 bg-gray-200 p-4 h-full overflow-hidden">
+        <!-- Nội dung bên phải -->
     </div>
 </div>
