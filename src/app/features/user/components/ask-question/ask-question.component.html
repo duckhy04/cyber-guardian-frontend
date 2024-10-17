@@ -1,0 +1,32 @@
+<div class="border border-black flex p-3">
+    <div class="h-10 w-10">
+        <img src="assets/avatar-profile.png" alt="User Avatar" class="h-full w-full object-cover rounded-full">
+    </div>
+    <form class="flex flex-col px-4" [formGroup]="askQuestionForm" (ngSubmit)="askQuestion()">
+        <input type="text" class="border border-black p-2 mb-2 rounded" formControlName="title" placeholder="Title"
+            required>
+        <div *ngIf="askQuestionForm.get('title')!.invalid && askQuestionForm.get('title')!.touched"
+            class="text-red-600 text-sm">
+            Title is required.
+        </div>
+
+        <input type="text" class="border border-black p-2 mb-2 rounded" formControlName="content" placeholder="Content"
+            required>
+        <div *ngIf="askQuestionForm.get('content')!.invalid && askQuestionForm.get('content')!.touched"
+            class="text-red-600 text-sm">
+            Content is required.
+        </div>
+
+        <select id="categories" formControlName="categoryId" aria-label="Categories"
+            class="border border-black p-2 rounded mb-2" required>
+            <option *ngFor="let category of listCategories" [value]="category.id">{{ category.name }}</option>
+        </select>
+        <div *ngIf="askQuestionForm.get('categoryId')!.invalid && askQuestionForm.get('categoryId')!.touched"
+            class="text-red-600 text-sm">
+            Category is required.
+        </div>
+
+        <button type="submit" class="bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+            [disabled]="askQuestionForm.invalid">Ask Question</button>
+    </form>
+</div>

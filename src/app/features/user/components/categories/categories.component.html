@@ -1,3 +1,14 @@
-<div *ngFor="let cateogry of categories">
-    <div> {{cateogry.name}} <div>
+<div class="text-3xl font-extrabold text-gray-800 mb-8 text-center">
+    Categories
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div *ngFor="let category of categories" class="p-4 border rounded-lg shadow-sm relative group cursor-pointer">
+        <div class="text-lg text-center font-bold text-gray-700">
+            {{ category.name }}
+        </div>
+        <div
+            class="text-sm text-center text-gray-500 opacity-0 group-hover:opacity-100 absolute inset-0 bg-white bg-opacity-100 p-4 rounded-lg transition-opacity duration-300 flex justify-center items-center">
+            {{ category.description }}
+        </div>
+    </div>
 </div>
