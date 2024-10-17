@@ -33,22 +33,10 @@
     <!-- Left Sidebar -->
     <div class="col-span-1 border-r-2 bg-white p-4 h-full overflow-hidden">
         <nav class="flex flex-col space-y-1 float-end">
-            <a class="nav-link" routerLink="dashboard">
-                <div class="md:block hidden mx-2">Dashboard</div>
-                <app-icon iconName="home"></app-icon>
-            </a>
-            <a class="nav-link" routerLink="categories">
-                <div class="md:block hidden mx-2">Categories</div>
-                <app-icon iconName="apps"></app-icon>
-            </a>
-            <a class="nav-link" routerLink="">
-                <div class="md:block hidden mx-2">Top Questions</div>
-                <app-icon iconName="question_answer"></app-icon>
-            </a>
-            <a class="nav-link" routerLink="ask-question">
-                <div class="md:block hidden mx-2">Ask Question</div>
-                <app-icon iconName="question_answer"></app-icon>
-            </a>
+            <app-nav-link routerLink="dashboard" iconName="home" label="Dashboard"></app-nav-link>
+            <app-nav-link routerLink="categories" iconName="apps" label="Categories"></app-nav-link>
+            <app-nav-link routerLink="my-question" iconName="question_answer" label="My Question"></app-nav-link>
+            <app-nav-link routerLink="ask-question" iconName="live_help" label="Ask Question"></app-nav-link>
         </nav>
     </div>
 

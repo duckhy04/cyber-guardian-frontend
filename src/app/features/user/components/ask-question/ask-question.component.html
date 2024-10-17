@@ -17,7 +17,8 @@
             Content is required.
         </div>
 
-        <select id="categories" formControlName="categoryId" aria-label="Categories"
+        
+        <select formControlName="categoryId" aria-label="Categories"
             class="border border-black p-2 rounded mb-2" required>
             <option *ngFor="let category of listCategories" [value]="category.id">{{ category.name }}</option>
         </select>
