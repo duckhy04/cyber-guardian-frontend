@@ -1,1 +1,9 @@
-<p>my-questions works!</p>
+<div>
+    <div *ngFor="let question of listMyQuestions">
+        <div>{{question.title}}</div>
+        <div>{{question.content}}</div>
+        <div>{{question.categoryName}}</div>
+        <div>{{question.createAt}}</div>
+        <div>{{question.viewCount}}</div>
+    </div>
+</div>

@@ -35,4 +35,11 @@ export class UserService {
       catchError((error: HttpErrorResponse) => this.errorHandler.handleError(error))
     );
   }
+
+  getQuestionsByUserId(userId: string): Observable<Question[]> {
+    const apiUrl = `${URL}/user/user-questions?userId=${userId}`;
+    return this.httpClient.get<Question[]>(apiUrl).pipe(
+      catchError((error: HttpErrorResponse) => this.errorHandler.handleError(error))
+    )
+  }
 }

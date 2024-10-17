@@ -12,5 +12,4 @@ import { Components } from '../../shared/components/ImportComponents';
   styleUrl: './user.component.scss'
 })
 export class UserComponent {
-  
 }

@@ -56,7 +56,7 @@ export class AskQuestionComponent {
   getAllCategories() {
     this.userService.getAllCategories().subscribe({
       next: (response) => {
-        this.listCategories = response
+        this.listCategories = response;
       },
       error: (error) => {
         console.error("Error fetching categories:", error);
