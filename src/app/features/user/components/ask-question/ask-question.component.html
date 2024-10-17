@@ -2,7 +2,7 @@
     <div class="h-10 w-10">
         <img src="assets/avatar-profile.png" alt="User Avatar" class="h-full w-full object-cover rounded-full">
     </div>
-    <form class="flex flex-col px-4" [formGroup]="askQuestionForm" (ngSubmit)="askQuestion()">
+    <form class="flex flex-col px-4 w-full" [formGroup]="askQuestionForm" (ngSubmit)="askQuestion()">
         <input type="text" class="border border-black p-2 mb-2 rounded" formControlName="title" placeholder="Title"
             required>
         <div *ngIf="askQuestionForm.get('title')!.invalid && askQuestionForm.get('title')!.touched"

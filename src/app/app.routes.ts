@@ -39,6 +39,10 @@ export const routes: Routes = [
                 path: 'ask-question',
                 loadComponent: () => import('./features/user/components/ask-question/ask-question.component').then((m) => m.AskQuestionComponent)
             },
+            {
+                path: 'my-questions',
+                loadComponent: () => import('./features/user/components/my-questions/my-questions.component').then((m) => m.MyQuestionsComponent)
+            },
         ]
     },
 

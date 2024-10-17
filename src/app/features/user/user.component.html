@@ -5,7 +5,7 @@
             <!-- Logo and name website -->
             <div class="flex items-center space-x-3 min-w-fit">
                 <div class="h-12 w-12">
-                    <img class="object-contain" src="assets/logo1.png" alt="Cyber Guardian Logo">
+                    <img class="h-full w-full object-cover" src="assets/logo1.png" alt="Cyber Guardian Logo">
                 </div>
                 <div class="text-xl font-semibold uppercase">Cyber Guardian</div>
             </div>
@@ -19,7 +19,7 @@
             <!-- Profile -->
             <div class="flex items-center justify-center mx-2 min-w-fit">
                 <!-- Avatar-->
-                <div class="w-10 h-10 rounded-full"><img src="assets/avatar-profile.png" alt="avatar"></div>
+                <div class="w-10 h-10"><img class="h-full w-full object-cover rounded-full" src="assets/avatar-profile.png" alt="avatar"></div>
                 <!-- Name -->
                 <div class="text-lg font-semibold text-gray-700 mx-2">Hello World</div>
             </div>
@@ -35,7 +35,7 @@
         <nav class="flex flex-col space-y-1 float-end">
             <app-nav-link routerLink="dashboard" iconName="home" label="Dashboard"></app-nav-link>
             <app-nav-link routerLink="categories" iconName="apps" label="Categories"></app-nav-link>
-            <app-nav-link routerLink="my-question" iconName="question_answer" label="My Question"></app-nav-link>
+            <app-nav-link routerLink="my-questions" iconName="question_answer" label="My Question"></app-nav-link>
             <app-nav-link routerLink="ask-question" iconName="live_help" label="Ask Question"></app-nav-link>
         </nav>
     </div>
@@ -47,6 +47,6 @@
 
     <!-- Right Sidebar -->
     <div class="col-span-1 bg-gray-200 p-4 h-full overflow-hidden">
-        <!-- Nội dung bên phải -->
+        
     </div>
 </div>
