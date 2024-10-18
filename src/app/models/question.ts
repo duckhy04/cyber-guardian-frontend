@@ -5,7 +5,7 @@ export interface Question {
     userName: string;
     categoryName: string;
     questionStatus: string;
-    viewCount: number;
-    createAt: string;
-    updateAt?: string;
+    viewsCount: number;
+    createdAt: string;
+    updatedAt?: string | null;
 }

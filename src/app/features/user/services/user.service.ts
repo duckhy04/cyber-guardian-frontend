@@ -37,9 +37,21 @@ export class UserService {
   }
 
   getQuestionsByUserId(userId: string): Observable<Question[]> {
-    const apiUrl = `${URL}/user/user-questions?userId=${userId}`;
-    return this.httpClient.get<Question[]>(apiUrl).pipe(
-      catchError((error: HttpErrorResponse) => this.errorHandler.handleError(error))
-    )
+    // const apiUrl = `${URL}/user/user-questions?userId=${userId}`;
+    // return this.httpClient.get<Question[]>(apiUrl).pipe(
+    //   catchError((error: HttpErrorResponse) => this.errorHandler.handleError(error))
+    // )
+    const mockMyQuestions: Question[] = [{
+      id: 7,
+      title: "question1",
+      content: "question1",
+      userName: "user2",
+      categoryName: "Category2",
+      questionStatus: "OPEN",
+      viewsCount: 0,
+      createdAt: "2024-10-18T22:38:16",
+      updatedAt: null
+    }];
+    return of(mockMyQuestions)
   }
 }

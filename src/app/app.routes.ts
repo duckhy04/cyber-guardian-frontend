@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { roleGuard } from './core/guard/role.guard';
 
 export const routes: Routes = [
-    // { path: '', redirectTo: '/auth', pathMatch: 'full' },
+    { path: '', redirectTo: '/auth/signin', pathMatch: 'full' },
 
     // Routes dành cho auth
     {
