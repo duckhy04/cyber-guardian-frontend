@@ -19,8 +19,12 @@ export class UserService {
   ) { }
 
   getAllCategories(): Observable<Category[]> {
-    return this.httpClient.get<Category[]>(URL + "/user/categories");
-    // return of(categories);
+    return this.httpClient.get<Category[]>(URL + "/user/categories").pipe(
+      catchError((error: HttpErrorResponse) => {
+        this.errorHandler.handleError(error)
+        return of(categories)
+      })
+    )
   }
 
   askQuestion(question: Question, userId: string, categoryId: string): Observable<Question> {
@@ -33,14 +37,16 @@ export class UserService {
   getQuestionsByUserId(userId: string): Observable<Question[]> {
     const apiUrl = `${URL}/user/user-questions?userId=${userId}`;
     return this.httpClient.get<Question[]>(apiUrl).pipe(
-      catchError((error: HttpErrorResponse) => this.errorHandler.handleError(error))
+      catchError((error: HttpErrorResponse) => {
+        this.errorHandler.handleError(error)
+        return of(myQuestion);
+      })
     )
-    // return of(myQuestion)
   }
 
-  saveComment(commentDto: any, userId: string, questionId: number): Observable<Comment> {
+  saveComment(commentDto: any, userId: string, questionId: number): Observable<any> {
     const apiUrl = `${URL}/user/comment?userId=${userId}&questionId=${questionId}`;
-    return this.httpClient.post<Comment>(apiUrl, commentDto).pipe(
+    return this.httpClient.post<any>(apiUrl, commentDto).pipe(
       catchError((error: HttpErrorResponse) => this.errorHandler.handleError(error))
     )
   }

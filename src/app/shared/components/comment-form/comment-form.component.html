@@ -1,0 +1,7 @@
+<div>
+    <form [formGroup]="commentForm" (ngSubmit)="postCommentForm()">
+        <input type="text" placeholder="Comment..." formControlName="text">
+        <input type="file" placeholder="File image" (change)="onSelectedFile($event)" #fileInput>
+        <button type="submit">Post</button>
+    </form>
+</div>

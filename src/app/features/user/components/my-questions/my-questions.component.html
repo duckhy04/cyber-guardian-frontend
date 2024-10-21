@@ -1,19 +1,8 @@
 <div>
-    <div *ngFor="let question of listMyQuestions">
-        <div>{{ question.title }}</div>
-        <div>{{ question.content }}</div>
-        <div>{{ question.userName }}</div>
-        <div>{{ question.categoryName }}</div>
-        <div>{{ question.questionStatus }}</div>
-        <div>{{ question.createdAt | date:'HH:mm:ss yyyy-MM-dd' }}</div>
-        <div>{{ question.updatedAt| date: 'short' }}</div>
-        <div>{{ question.viewsCount }}</div>
-        <div>
-            <form [formGroup]="formComment" (ngSubmit)="postComment(question.id)">
-                <input type="text" placeholder="Comment..." formControlName="text">
-                <input type="file" id="fileInput" (change)="onFileSelected($event)" placeholder="file">
-                <button type="submit">Post</button>
-            </form>
-        </div>
+    <div *ngFor="let myQuestion of listMyQuestions">
+        <app-list-question [question]="myQuestion"></app-list-question>
+        <app-comment-form [questionId]="myQuestion.id" 
+            (commentFormPosted)="postComment($event.questionId, $event.text, $event.imageFile)">
+        </app-comment-form>
     </div>
 </div>
