@@ -1,8 +1,16 @@
 <div>
     <div *ngFor="let myQuestion of listMyQuestions">
         <app-list-question [question]="myQuestion"></app-list-question>
-        <app-comment-form [questionId]="myQuestion.id" 
+        <app-comment-form [questionId]="myQuestion.id"
             (commentFormPosted)="postComment($event.questionId, $event.text, $event.imageFile)">
         </app-comment-form>
+
+        <button (click)="getCommentsByQuestionId(myQuestion.id)">
+            {{ showingComments[myQuestion.id] ? 'Hide Comments' : 'View Comments' }}
+        </button>
+
+        <div *ngIf="showingComments[myQuestion.id]">
+            <app-comment-list [comments]="comments[myQuestion.id]"></app-comment-list>
+        </div>
     </div>
 </div>

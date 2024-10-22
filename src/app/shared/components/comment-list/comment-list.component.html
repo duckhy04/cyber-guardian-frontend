@@ -1,0 +1,6 @@
+<div *ngFor="let comment of comments">
+    <div>{{ comment.id }}</div>
+    <div>{{ comment.text }}</div>
+    <div>{{ comment.userName }}</div>
+    <img [src]="comment.processedImg" alt="comment-image">
+</div>
