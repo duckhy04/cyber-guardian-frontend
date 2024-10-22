@@ -1,6 +1,12 @@
-<div *ngFor="let comment of comments">
-    <div>{{ comment.id }}</div>
-    <div>{{ comment.text }}</div>
-    <div>{{ comment.userName }}</div>
-    <img [src]="comment.processedImg" alt="comment-image">
+<div *ngIf="comments.length > 0; else noComments">
+    <div *ngFor="let comment of comments">
+        <div class="comment">
+            <img *ngIf="comment.processedImg" [src]="comment.processedImg" alt="Comment Image" />
+            <p>{{ comment.text }}</p>
+            <small>{{ comment.createdAt | date:'short' }}</small> <!-- Nếu bạn có thuộc tính createdDate -->
+        </div>
+    </div>
 </div>
+<ng-template #noComments>
+    <p>No comments available.</p>
+</ng-template>

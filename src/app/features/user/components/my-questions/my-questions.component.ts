@@ -21,8 +21,8 @@ export class MyQuestionsComponent {
 
   userId!: string;
   listMyQuestions!: Question[];
-  comments: { [key: number]: Comment[] } = {};
-  showingComments: { [key: number]: boolean } = {};
+  comments: { [questionId: number]: Comment[] } = {};
+  showingComments: { [questionId: number]: boolean } = {};
 
   constructor(private userService: UserService, private fb: FormBuilder, private commentService: CommentService) {
     this.userId = UserStorageService.getUserId();
