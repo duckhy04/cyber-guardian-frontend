@@ -1,12 +1,16 @@
-<div>
-    <div class="bg-blue-600 p-4 flex justify-between items-center">
-        <span class="text-white text-lg font-bold">Cyber Guardian</span>
-        <div class="flex space-x-4">
-            <a routerLink="signup" routerLinkActive="active" class="text-white hover:bg-blue-700 rounded px-4 py-2">Sign
-                Up</a>
-            <a routerLink="signin" routerLinkActive="active" class="text-white hover:bg-blue-700 rounded px-4 py-2">Sign
-                In</a>
+<div class="flex px-2 w-screen max-h-16 bg-toolbar-gradient shadow-lg overflow-hidden">
+    <div class="flex items-center justify-center h-16 ">
+        <img class="h-full rounded-full" src="assets/logo1.png" alt="logo-website">
+        <div class="flex flex-col px-2">
+            <div class="text-2xl text-primary font-bold uppercase">Cyber Guardian</div>
+            <small class="-mt-2 text-primary2">Question & Answer</small>
         </div>
     </div>
+    <div class="flex flex-row gap-2 items-center ml-auto p-2">
+        <a class="custom-button" routerLink="signup">Sign Up</a>
+        <a class="custom-button" routerLink="signin">Sign In</a>
+    </div>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
 </div>
-<router-outlet></router-outlet>
