@@ -1,46 +1,38 @@
-<div class="min-h-screen flex items-center justify-center bg-gray-100">
-    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h2 class="text-2xl font-bold text-center mb-6">Sign In</h2>
-
-        <form (ngSubmit)="onSubmit()" [formGroup]="signInForm" class="space-y-4">
+<div class="">
+    <div class="">
+        <h2 class="">Sign In</h2>
+        <form class="" (ngSubmit)="onSubmit()" [formGroup]="signInForm">
+            
             <!-- Email Input -->
             <div class="">
-                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                <input id="email" type="email" formControlName="email"
-                    class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="you@example.com" required />
-                <div *ngIf="signInForm.get('email')!.invalid && signInForm.get('email')!.touched"
-                    class="text-red-500 text-sm">
+                <label class="" for="email">Email</label>
+                <input class="" id="email" type="email" formControlName="email" placeholder="example@gmail.com" required />
+                <div class="" *ngIf="signInForm.get('email')!.invalid && signInForm.get('email')!.touched">
                     Valid email is required.
                 </div>
             </div>
 
             <!-- Password Input -->
             <div>
-                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                <input id="password" type="password" formControlName="password"
-                    class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="••••••••" required />
-                <div *ngIf="signInForm.get('password')!.invalid && signInForm.get('password')!.touched"
-                    class="text-red-500 text-sm">
+                <label class="" for="password">Password</label>
+                <input class="" id="password" type="password" formControlName="password" placeholder="••••••••"
+                    required />
+                <div class="" *ngIf="signInForm.get('password')!.invalid && signInForm.get('password')!.touched">
                     Password is required.
                 </div>
             </div>
 
             <!-- Sign In Button -->
             <div>
-                <button type="submit"
-                    class="w-full bg-blue-600 text-white px-4 py-2 rounded-md shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-                    [disabled]="signInForm.invalid">
-                    Sign In
-                </button>
+                <button class="" type="submit" [disabled]="signInForm.invalid">Sign In</button>
             </div>
 
             <!-- Additional Options -->
-            <div class="flex justify-between items-center text-sm">
-                <a href="/" class="text-blue-600 hover:underline">Forgot password?</a>
-                <a href="auth/signup" class="text-blue-600 hover:underline">Create an account</a>
+            <div class="">
+                <a class="" href="/">Forgot password?</a>
+                <a class="" href="auth/signup">Create an account</a>
             </div>
+
         </form>
     </div>
 </div>

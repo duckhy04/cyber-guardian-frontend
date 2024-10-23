@@ -1,3 +1,4 @@
+<!-- Toolbar -->
 <div class="flex px-2 w-screen max-h-16 bg-toolbar-gradient shadow-lg overflow-hidden">
     <div class="flex items-center justify-center h-16 ">
         <img class="h-full rounded-full" src="assets/logo1.png" alt="logo-website">
@@ -7,10 +8,9 @@
         </div>
     </div>
     <div class="flex flex-row gap-2 items-center ml-auto p-2">
-        <a class="custom-button" routerLink="signup">Sign Up</a>
-        <a class="custom-button" routerLink="signin">Sign In</a>
-    </div>
-    <div>
-        <router-outlet></router-outlet>
+        <a class="custom-button button-hover" routerLink="signup">Sign Up</a>
+        <a class="custom-button button-hover" routerLink="signin">Sign In</a>
     </div>
 </div>
+<!-- Router -->
+<router-outlet></router-outlet>

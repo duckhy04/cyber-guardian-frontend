@@ -7,6 +7,7 @@ module.exports = {
         'primary': '#5e17eb',
         'primary2': '#00e7ef',
         'primary3': '#3D2C8D',
+        'primary4': '#BEA1F7',
       },
       spacing: {
         '128': '32rem',
