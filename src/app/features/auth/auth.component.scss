@@ -1,7 +1,22 @@
 .custom-button {
-    @apply px-4 py-2 text-white text-sm bg-primary3 rounded-xl;
+    @apply flex items-center justify-center bg-primary/75 w-fit px-4 py-2 text-white text-xs font-bold uppercase rounded-lg overflow-hidden cursor-pointer relative;
 }
 
-.button-hover{
-    @apply transition-transform transform duration-100 hover:scale-110 hover:bg-primary hover:shadow-lg
+.text {
+    transition: transform 0.5s ease, opacity 0.25s ease;
+}
+
+.icon {
+    @apply absolute text-[10px];
+    transform: translateX(75px);
+    transition: transform 0.25s ease;
+}
+
+.custom-button:hover .icon {
+    transform: translateX(0);
+}
+
+.custom-button:hover .text {
+    transform: translateX(75px);
+    opacity: 0;
 }
